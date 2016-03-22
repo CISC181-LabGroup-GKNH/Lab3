@@ -923,7 +923,7 @@ public class HandTest {
 	}		
 	
 	@Test
-	public void TestRoyalFlush() {
+	public void TestfFlush() {
 		
 		HandScore hs = new HandScore();
 		ArrayList<Card> RoyalFlush = new ArrayList<Card>();

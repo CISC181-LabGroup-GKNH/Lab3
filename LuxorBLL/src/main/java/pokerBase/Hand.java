@@ -1,6 +1,7 @@
 package pokerBase;
 
 import java.lang.reflect.Method;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -14,10 +15,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import exceptions.DeckException;
 import exceptions.HandException;
+import exceptions.exHand;
 import pokerEnums.*;
 
 import static java.lang.System.out;
 import static java.lang.System.err;
+
+import pokerBase.HandScore;
 
 @XmlRootElement
 public class Hand {
@@ -534,5 +538,17 @@ public class Hand {
 			return 0;
 		}
 	};
-
+	
+	public static pokerBase.HandScore PickBestHand(ArrayList<Hand>Hands) throws exHand{
+		Hand handA = new Hand();
+		Hand handB = new Hand();
+		
+		pokerBase.HandScore scoreA = handA.getHandScore();
+		pokerBase.HandScore scoreB = handB.getHandScore();
+		
+		if(scoreA > scoreB){
+			return scoreA;
+		}else
+			return scoreB;
+	}
 }
